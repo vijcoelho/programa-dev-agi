@@ -1,8 +1,14 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(idadeSuficiente(20));
-        System.out.println(limiteConta(2000));
-        System.out.println(emprestimo(2000, 800));
+        //System.out.println(idadeSuficiente(20));
+        //System.out.println(limiteConta(2000));
+        //System.out.println(emprestimo(2000, 800));
+
+        System.out.println(mensalFixo());
+        System.out.println(mensalVariavel());
+        System.out.println(investimento());
     }
 
     //EXC 1
@@ -29,5 +35,47 @@ public class Main {
             return "saldo invalido para emprestimo";
         }
         return "Emprestimo invalido";
+    }
+
+    //EXC ESTRUTURA DE REPETICAO....
+    //EXC 1
+    public static double mensalFixo() {
+        Scanner scanner = new Scanner(System.in);
+        int contador = 0;
+        double total = 0;
+        while (contador < 12) {
+            System.out.println("Valor: ");
+            double valor = scanner.nextDouble();
+            total = total + valor;
+            contador++;
+        }
+        return total;
+    }
+
+    //EXC 2
+    public static double mensalVariavel() {
+        Scanner scanner = new Scanner(System.in);
+        int contador = 0;
+        double total = 0;
+        while (contador < 12) {
+            System.out.println("Valor variavel: ");
+            double valor = scanner.nextDouble();
+            total = total + valor;
+            contador++;
+        }
+        return total;
+    }
+
+    //EXC 3
+    public static double investimento() {
+        Scanner scanner = new Scanner(System.in);
+        int contador = 0;
+        double total = 1000;
+        while (contador < 12) {
+            System.out.println("Valor investido: ");
+            double valor = scanner.nextDouble();
+            total = total + (valor * 0.005);
+        }
+        return total;
     }
 }
