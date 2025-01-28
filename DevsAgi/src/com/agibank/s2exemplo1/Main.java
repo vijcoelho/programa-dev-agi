@@ -69,7 +69,6 @@ public class Main {
                 (double) media
         );
     }
-
     //Exc 5
     public static String exercicio_5(int nota) {
         if (nota >6) {
