@@ -7,8 +7,8 @@ public class Main {
         //System.out.println(emprestimo(2000, 800));
 
         System.out.println(mensalFixo());
-        System.out.println(mensalVariavel());
-        System.out.println(investimento());
+//        System.out.println(mensalVariavel());
+//        System.out.println(investimento());
     }
 
     //EXC 1
