@@ -63,10 +63,10 @@ public class Main {
         }
 
         double porcentagem = ((double) Math.abs(valor - media) / media) * 100;
-        return String.format("O valor %.2f está %.2f distante da media &.2f",
-                valor,
+        return String.format("o valor %.2f está %.2f distante da media %.2f",
+                (double) valor,
                 porcentagem,
-                media
+                (double) media
         );
     }
 
