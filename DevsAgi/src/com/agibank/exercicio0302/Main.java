@@ -31,18 +31,39 @@ public class Main {
     }
 
     public static void exercicio1Modificado() {
-        double[] precos = {1, 1, 10, 1, 1, 2, 3, 4, 5, 1, 1};
+        double[] precos = {100, 100, 300, 500, 600, 50, 100, 400};
+        double[] ativos = new double[precos.length];
+
         int i = 0;
         int j = 1;
 
-        while (j < precos.length - 1) {
+        while (i < precos.length - 2) {
             if (!(precos[i] >= precos[j])) {
-                if (!(precos[j] > precos[j + 1])) {
-                    System.out.printf("%d ", i);
+                if (precos[i] < precos[j] && precos[j] < precos[j + 1]) {
+                    ativos[i] = precos[i];
+                    ativos[j] = precos[j];
+                    ativos[j + 1] = precos[j + 1];
                 }
             }
             i++;
             j++;
+        }
+
+        boolean novaLinha = true;
+
+        for (int k = 0; k < ativos.length; k++) {
+            if (ativos[k] != 0) {
+                if (k > 0 && ativos[k] < ativos[k - 1]) {
+                    System.out.println();
+                    novaLinha = true;
+                }
+                if (novaLinha) {
+                    novaLinha = false;
+                } else {
+                    System.out.print(" ");
+                }
+                System.out.print(k);
+            }
         }
     }
 
