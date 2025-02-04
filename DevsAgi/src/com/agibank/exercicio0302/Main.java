@@ -3,11 +3,16 @@ package com.agibank.exercicio0302;
 
 public class Main {
     public static void main(String[] args) {
-        exercicio1();
-        exercicio2();
-        exercicio3();
-        exercicio4();
-        exercicio5();
+        exercicio1Modificado();
+//        exercicio1();
+//        exercicio2();
+//        exercicio3();
+//        exercicio4();
+//        exercicio5();
+//        exercicio6();
+//        exercicio7();
+//        exercicio8();
+//        exercicio9();
     }
 
     public static void exercicio1() {
@@ -22,6 +27,22 @@ public class Main {
         }
         if (!tendencia) {
             System.out.println("\nSem tendencia em alta!");
+        }
+    }
+
+    public static void exercicio1Modificado() {
+        double[] precos = {1, 1, 10, 1, 1, 2, 3, 4, 5, 1, 1};
+        int i = 0;
+        int j = 1;
+
+        while (j < precos.length - 1) {
+            if (!(precos[i] >= precos[j])) {
+                if (!(precos[j] > precos[j + 1])) {
+                    System.out.printf("%d ", i);
+                }
+            }
+            i++;
+            j++;
         }
     }
 
@@ -72,5 +93,71 @@ public class Main {
             crescimentoDiario += ((ativo[i] - ativo[i - 1]) / ativo[i - 1]);
         }
         System.out.printf("\nCrescimento diario acumulado: %.2f", crescimentoDiario);
+    }
+
+    public static void exercicio6() {
+        double[] valores = {100, 102.5, 101, 103.5, 105, 106, 108.5, 107, 109.5, 110};
+        int alta = 0;
+        int baixa = 0;
+
+        int i = 0;
+        int j = 1;
+
+        while (i < valores.length - 1) {
+            if (valores[j] > valores[i]) {
+                alta++;
+            } else {
+                baixa++;
+            }
+            i++;
+            j++;
+        }
+        System.out.printf("Dias em alta: %d\nDias em baixa: %d", alta, baixa);
+    }
+
+    public static void exercicio7() {
+        double[] valores = {5000, 3000, 7000, 4000, 6000};
+        double total = 0;
+
+        for (double i : valores) {
+            total += i;
+        }
+        System.out.printf("Total investido: R$ %.2f\n", total);
+
+        for (double i : valores) {
+            i = (i / total) * 100;
+            System.out.printf("%.2f%% ", i);
+        }
+    }
+
+    public static void exercicio8() {
+        double[] compra = {10000, 8000, 12000, 7000, 15000};
+        double[] venda = {12000, 8500, 14000, 7200, 18000};
+
+        boolean temImposto = false;
+        double lucro = 0;
+        double imposto = 0;
+
+        for (int i = 0; i < compra.length; i++) {
+            lucro += venda[i] - compra[i];
+        }
+        if (lucro >= 20000) {
+            imposto = lucro * 0.15;
+            temImposto = true;
+        }
+
+        System.out.printf("Lucro total: R$ %.2f\n", lucro);
+        if (temImposto) {
+            System.out.printf("Imposto: R$ %.2f\n", imposto);
+            System.out.printf("Total com imposto: R$ %.2f", lucro - imposto);
+        }
+    }
+
+    public static void exercicio9() {
+
+    }
+
+    public static void exercicio10() {
+
     }
 }
