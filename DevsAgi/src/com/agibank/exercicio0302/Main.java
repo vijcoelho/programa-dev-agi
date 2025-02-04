@@ -11,18 +11,13 @@ public class Main {
     }
 
     public static void exercicio1() {
-        double[] precos = {100, 100, 100, 300, 600, 900, 100, 100, 100, 100};
+        double[] precos = {100, 100, 100, 300, 600, 900, 100, 100, 102, 103};
         boolean tendencia = false;
-        int count = 0;
 
-        for (int i = 0; i < precos.length - 1; i++) {
-            if (count == 1) {
-                break;
-            }
+        for (int i = 0; i < precos.length - 2; i++) {
             if (precos[i] < precos[i + 1] && precos[i + 1] < precos[i + 2]) {
-                System.out.println(i + " " + (i + 1) + " " + (i + 2));
+                System.out.println("Trincas de tendencia: " + i + " " + (i + 1) + " " + (i + 2));
                 tendencia = true;
-                count = 1;
             }
         }
         if (!tendencia) {
