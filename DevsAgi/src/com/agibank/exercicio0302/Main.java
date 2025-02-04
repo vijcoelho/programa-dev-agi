@@ -19,7 +19,7 @@ public class Main {
             if (count == 1) {
                 break;
             }
-            if (precos[i] < precos[i + 1] && precos[i] < precos[i + 2]) {
+            if (precos[i] < precos[i + 1] && precos[i + 1] < precos[i + 2]) {
                 System.out.println(i + " " + (i + 1) + " " + (i + 2));
                 tendencia = true;
                 count = 1;
