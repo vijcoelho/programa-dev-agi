@@ -45,12 +45,12 @@ public class Main {
         double menor = valores[0];
         double maior = valores[0];
 
-        for (int i = 0; i < valores.length; i++) {
-            if (maior < valores[i]) {
-                maior = valores[i];
+        for (double i : valores) {
+            if (maior < i) {
+                maior = i;
             }
-            if (menor > valores[i]) {
-                menor = valores[i];
+            if (menor > i) {
+                menor = i;
             }
         }
         System.out.printf("\nMaior valor: %.2f\nMenor valor: %.2f\n", maior, menor);
