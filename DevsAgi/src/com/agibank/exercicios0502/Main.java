@@ -77,7 +77,15 @@ public class Main {
     }
 
     public static void exercicio5() {
+        int[][] matrizA = {
+                {1,2},
+                {3,4}
+        };
 
+        int[][] matrizB = {
+                {5,6},
+                {7,8}
+        };
     }
 
     public static void exercicio6() {
