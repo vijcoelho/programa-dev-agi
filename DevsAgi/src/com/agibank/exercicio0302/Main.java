@@ -3,7 +3,7 @@ package com.agibank.exercicio0302;
 
 public class Main {
     public static void main(String[] args) {
-        exercicio1Modificado();
+//        exercicio1Modificado();
 //        exercicio1();
 //        exercicio2();
 //        exercicio3();
@@ -13,6 +13,7 @@ public class Main {
 //        exercicio7();
 //        exercicio8();
 //        exercicio9();
+        exercicio10();
     }
 
     public static void exercicio1() {
@@ -143,7 +144,7 @@ public class Main {
         for (double i : valores) {
             total += i;
         }
-        System.out.printf("Total investido: R$ %.2f\n", total);
+        System.out.printf("\nTotal investido: R$ %.2f\n", total);
 
         for (double i : valores) {
             i = (i / total) * 100;
@@ -167,18 +168,45 @@ public class Main {
             temImposto = true;
         }
 
-        System.out.printf("Lucro total: R$ %.2f\n", lucro);
+        System.out.printf("\nLucro total: R$ %.2f\n", lucro);
         if (temImposto) {
-            System.out.printf("Imposto: R$ %.2f\n", imposto);
-            System.out.printf("Total com imposto: R$ %.2f", lucro - imposto);
+            System.out.printf("\nImposto: R$ %.2f\n", imposto);
+            System.out.printf("\nTotal com imposto: R$ %.2f", lucro - imposto);
         }
     }
 
     public static void exercicio9() {
+        double[] valores = new double[6];
+        int tamanho = 0;
+        int meses = 1;
 
+        for (int i = 0; i < valores.length; i++) {
+            valores[tamanho] = 1000 * Math.pow((1 + 0.02), meses);
+            meses++;
+            tamanho++;
+        }
+
+        for (double i : valores) {
+            System.out.printf("%.2f ", i);
+        }
     }
 
     public static void exercicio10() {
+        double[] precos = {100, 105, 102, 110, 100, 107, 95, 97, 99, 103};
+        double maior = precos[0];
+        double menor = precos[0];
+        double drawdown = 0;
 
+        for (double preco : precos) {
+            if (maior < preco) {
+                maior = preco;
+            }
+            if (menor > preco) {
+                menor = preco;
+            }
+        }
+
+        drawdown = (menor - maior) / maior * 100;
+        System.out.printf("%.2f%% ", drawdown);
     }
 }

@@ -5,6 +5,7 @@ public class Main {
         somaElementos();
         maiorMenorElemento();
         matrizIdentidade();
+        somaLinhas();
     }
 
     public static void somaElementos() {
@@ -49,10 +50,23 @@ public class Main {
             matriz[i][i] = 1;
         }
         System.out.println();
-        for (int i = 0; i < matriz.length; i++) {
+        for (int[] i : matriz) {
             for (int j = 0; j < matriz.length; j++) {
-                System.out.printf("%d ",matriz[i][j]);
+                System.out.print(i[j] + " ");
             }
+            System.out.println();
+        }
+    }
+
+    public static void somaLinhas() {
+        int[][] matriz = {{2,2,2}, {3,3,3}, {4,4,4}};
+
+        for (int i = 0; i < matriz.length; i++) {
+            int somaLinha = 0;
+            for (int j = 0; j < matriz.length; j++) {
+                somaLinha += matriz[i][j];
+            }
+            System.out.println(somaLinha);
         }
     }
 }
