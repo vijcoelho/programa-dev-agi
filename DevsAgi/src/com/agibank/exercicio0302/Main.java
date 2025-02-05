@@ -195,7 +195,7 @@ public class Main {
         double[] precos = {100, 105, 102, 110, 100, 107, 95, 97, 99, 103};
         double maior = precos[0];
         double menor = precos[0];
-        double drawdown = 0;
+        double drawdown;
 
         for (double preco : precos) {
             if (maior < preco) {
