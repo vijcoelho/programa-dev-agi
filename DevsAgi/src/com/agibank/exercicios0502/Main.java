@@ -6,6 +6,7 @@ public class Main {
         exercicio2();
         exercicio3();
         exercicio4();
+        exercicio5();
     }
 
     public static void exercicio1() {
@@ -78,14 +79,22 @@ public class Main {
 
     public static void exercicio5() {
         int[][] matrizA = {
-                {1,2},
-                {3,4}
+                {1,2,3},
+                {4,5,6}
         };
 
         int[][] matrizB = {
-                {5,6},
-                {7,8}
+                {7,8},
+                {9,10},
+                {11,12}
         };
+
+        int[][] matrizC = new int[matrizA.length][matrizB[0].length];
+
+        if (matrizA[0].length != matrizB.length) {
+            System.out.println("Nao é possivel realizar a multiplicacao");
+        }
+        
     }
 
     public static void exercicio6() {
