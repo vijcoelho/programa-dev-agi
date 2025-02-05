@@ -11,9 +11,9 @@ public class Main {
 //        exercicio5();
 //        exercicio6();
 //        exercicio7();
-//        exercicio8();
+        exercicio8();
 //        exercicio9();
-        exercicio10();
+//        exercicio10();
     }
 
     public static void exercicio1() {
@@ -156,22 +156,23 @@ public class Main {
         double[] compra = {10000, 8000, 12000, 7000, 15000};
         double[] venda = {12000, 8500, 14000, 7200, 18000};
 
-        boolean temImposto = false;
-        double lucro = 0;
-        double imposto = 0;
+        double lucro = 0, imposto;
 
+        System.out.print("Lucros parciais: ");
         for (int i = 0; i < compra.length; i++) {
             lucro += venda[i] - compra[i];
-        }
-        if (lucro >= 20000) {
-            imposto = lucro * 0.15;
-            temImposto = true;
+            double lucroParcial = 0;
+            lucroParcial += venda[i] - compra[i];
+            System.out.print(lucroParcial + " ");
         }
 
         System.out.printf("\nLucro total: R$ %.2f\n", lucro);
-        if (temImposto) {
-            System.out.printf("\nImposto: R$ %.2f\n", imposto);
-            System.out.printf("\nTotal com imposto: R$ %.2f", lucro - imposto);
+        if (lucro > 20000) {
+            imposto = (lucro - 20000) * 0.15;
+            System.out.printf("Imposto: R$ %.2f\n", imposto);
+            System.out.printf("Total com imposto: R$ %.2f", lucro + imposto);
+        } else {
+            System.out.println("Sem imposto devido.");
         }
     }
 
