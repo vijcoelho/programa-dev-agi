@@ -7,7 +7,11 @@ public class Main {
 //        exercicio3();
 //        exercicio4();
 //        exercicio5();
-        exercicio6();
+//        exercicio6();
+//        exercicio7();
+//        exercicio8();
+//        exercicio9();
+        exercicio10();
     }
 
     public static void exercicio1() {
@@ -121,7 +125,7 @@ public class Main {
                 if (elemento == matriz[i][j]) {
                     encontrado = true;
                     System.out.printf(
-                            "Elemento %d encontrado na linha %d e coluna %d",elemento, i, j
+                            "Elemento %d encontrado na linha %d e coluna %d",elemento, i+1, j+1
                     );
                 }
             }
@@ -132,18 +136,105 @@ public class Main {
     }
 
     public static void exercicio7() {
+        int[][] matriz = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9},
+        };
 
+        int diagonalPrincipal = 0, diagonalSecundario = 0, c = matriz.length - 1;
+
+        for (int i = 0; i < matriz.length; i++) {
+            diagonalPrincipal += matriz[i][i];
+            diagonalSecundario += matriz[i][c];
+            c--;
+        }
+
+        System.out.printf(
+                "Diagonal principal: %d\nDiagonal secundario: %d",
+                diagonalPrincipal, diagonalSecundario
+        );
     }
 
     public static void exercicio8() {
+        int[][] matriz = {
+                {1,0,0},
+                {0,1,0},
+                {0,0,1},
+        };
+        boolean diagonal = false, zeros = false;
+        int total = matriz.length * matriz[0].length;
 
+        int count = 0;
+        int zerosCount = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            if (matriz[i][i] == 1) {
+                count++;
+            }
+            for (int j = 0; j < matriz.length; j++) {
+                if (matriz[i][j] == 0) {
+                    zerosCount++;
+                }
+            }
+        }
+        if (count == matriz.length) {
+            diagonal = true;
+        }
+        if (zerosCount == (total - count)) {
+            zeros = true;
+        }
+        if (diagonal && zeros) {
+            System.out.println("A matriz é uma identidade");
+        } else {
+            System.out.println("Matriz nao é uma identidade");
+        }
     }
 
     public static void exercicio9() {
+        double[][] matriz = {
+                {2,4,6},
+                {8,10,12}
+        };
+
+        double maior = matriz[0][0];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length + 1; j++) {
+                if (maior < matriz[i][j]) {
+                    maior = matriz[i][j];
+                }
+            }
+        }
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length + 1; j++) {
+                matriz[i][j] /= maior;
+                System.out.printf("%.2f ", matriz[i][j]);
+            }
+            System.out.println();
+        }
 
     }
 
     public static void exercicio10() {
+        int[][] matriz = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
+
+        int[][] aux = new int[matriz.length][matriz.length];
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                aux[j][matriz.length - 1 - i] = matriz[i][j];
+            }
+        }
+
+        for (int l = 0; l < matriz.length; l++) {
+            for (int m = 0; m < matriz.length; m++) {
+                System.out.print(aux[l][m] + " ");
+            }
+            System.out.println();
+        }
 
     }
 }
