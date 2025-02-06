@@ -2,11 +2,12 @@ package com.agibank.exercicios0502;
 
 public class Main {
     public static void main(String[] args) {
-        exercicio1();
-        exercicio2();
-        exercicio3();
-        exercicio4();
-        exercicio5();
+//        exercicio1();
+//        exercicio2();
+//        exercicio3();
+//        exercicio4();
+//        exercicio5();
+        exercicio6();
     }
 
     public static void exercicio1() {
@@ -91,14 +92,43 @@ public class Main {
 
         int[][] matrizC = new int[matrizA.length][matrizB[0].length];
 
-        if (matrizA[0].length != matrizB.length) {
-            System.out.println("Nao é possivel realizar a multiplicacao");
+        for (int i = 0; i < matrizA.length; i++) {
+            for (int j = 0; j < matrizB[0].length; j++) {
+                for (int k = 0; k < matrizA[0].length; k++) {
+                    matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
+                }
+            }
         }
-        
+
+        for (int i = 0; i < matrizC.length; i++) {
+            for (int j = 0; j < matrizC.length; j++) {
+                System.out.print(matrizC[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void exercicio6() {
-
+        int[][] matriz = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9},
+        };
+        int elemento = 7;
+        boolean encontrado = false;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                if (elemento == matriz[i][j]) {
+                    encontrado = true;
+                    System.out.printf(
+                            "Elemento %d encontrado na linha %d e coluna %d",elemento, i, j
+                    );
+                }
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Elemento nao encontrado!");
+        }
     }
 
     public static void exercicio7() {
