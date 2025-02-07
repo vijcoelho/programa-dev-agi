@@ -112,6 +112,10 @@ public class Main {
         }
     }
 
+    public static void exercicio5Modificado() {
+        
+    }
+
     public static void exercicio6() {
         int[][] matriz = {
                 {1,2,3},
