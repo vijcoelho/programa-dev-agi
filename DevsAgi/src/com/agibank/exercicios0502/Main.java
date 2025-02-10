@@ -7,11 +7,12 @@ public class Main {
 //        exercicio3();
 //        exercicio4();
 //        exercicio5();
+        exercicio5Modificado();
 //        exercicio6();
 //        exercicio7();
 //        exercicio8();
 //        exercicio9();
-        exercicio10();
+//        exercicio10();
     }
 
     public static void exercicio1() {
@@ -113,7 +114,31 @@ public class Main {
     }
 
     public static void exercicio5Modificado() {
-        
+        int[][] matrizA = {
+                {1,2,3},
+                {4,5,6}
+        };
+
+        int[][] matrizB = {
+                {7,8},
+                {9,10},
+                {11,12}
+        };
+
+        int a = 0, b = 0, c = 0, d = 0;
+
+        int i = 0, j = 0, k = 0, m = 1;
+        do {
+            a += matrizA[i][j] * matrizB[k][i];
+            b += matrizA[i][j] * matrizB[k][m];
+            c += matrizA[m][j] * matrizB[k][i];
+            d += matrizA[m][j] * matrizB[k][m];
+            k++;
+            j++;
+
+        } while (k != matrizB.length);
+
+        System.out.println(a + " " + b + "\n" + c + " " + d);
     }
 
     public static void exercicio6() {

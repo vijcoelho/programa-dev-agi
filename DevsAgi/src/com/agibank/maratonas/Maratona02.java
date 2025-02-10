@@ -7,7 +7,7 @@
 // Vitor Coelho
 // Testers:
 //
-package com.agibank.exercicios.s3.dia5.Maratona2;
+package com.agibank.maratonas;
 
 
 import java.util.Scanner;
