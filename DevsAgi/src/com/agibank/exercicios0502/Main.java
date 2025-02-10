@@ -129,10 +129,10 @@ public class Main {
 
         int i = 0, j = 0, k = 0, m = 1;
         do {
-            a += matrizA[i][j] * matrizB[k][i];
-            b += matrizA[i][j] * matrizB[k][m];
-            c += matrizA[m][j] * matrizB[k][i];
-            d += matrizA[m][j] * matrizB[k][m];
+           a += matrizA[i][j] * matrizB[k][i];
+           b += matrizA[i][j] * matrizB[k][m];
+           c += matrizA[m][j] * matrizB[k][i];
+           d += matrizA[m][j] * matrizB[k][m];
             k++;
             j++;
 
