@@ -20,9 +20,7 @@ public class Main {
 //        double[] vetor = {0.01, 0.02, -0.01, 0.03, -0.02};
 //        System.out.printf("Volatilidade: %.2f", calcularVolatilidade(vetor));
 
-//        double[] valores = {1000, 2000, 1500};
-//        double[] ativos = {0.05, 0.03, 0.04};
-//        System.out.println(simularCarteira(valores, ativos));
+//        d 
 
 //        System.out.printf("Montante final: %.2f", calcularJurosCompostos(1000, 2, 12));
 
@@ -116,7 +114,7 @@ public class Main {
     public static double simularCarteira(double[] valores, double[] ativos) {
         double total = 0;
         for (int i = 0; i < valores.length; i++) {
-            total += valores[i] * (1 + ativos[i]);
+            total += valores[i] * Math.pow((1 + ativos[i]), 12);
         }
         return total;
     }
