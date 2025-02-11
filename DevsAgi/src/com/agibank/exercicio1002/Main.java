@@ -116,7 +116,7 @@ public class Main {
     public static double simularCarteira(double[] valores, double[] ativos) {
         double total = 0;
         for (int i = 0; i < valores.length; i++) {
-            total += valores[i] * (1 + ativos[i]);
+            total += valores[i] * Math.pow((1 + ativos[i]), 12);
         }
         return total;
     }
