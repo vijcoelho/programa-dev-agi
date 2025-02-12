@@ -17,8 +17,11 @@ public class Main {
 
 //        System.out.println(comprarAtivos(5,4));
 
-//        double[] vetor = {0.01, 0.02, -0.01, 0.03, -0.02};
-//        System.out.printf("Volatilidade: %.2f", calcularVolatilidade(vetor));
+//        double[] vetor = {100, 102, 101, 103, 102};
+//        System.out.printf("Volatilidade: %.3f", calcularVolatilidade(vetor));
+
+        double[] vetor = {0.01, 0.02, -0.01, 0.03, -0.02};
+        System.out.printf("Volatilidade: %.3f", calcularVolatilidadeCorreto(vetor));
 
 //        double[] valores = {1000, 2000, 1500};
 //        double[] ativos = {0.05, 0.03, 0.04};
@@ -108,8 +111,30 @@ public class Main {
             j++;
         }
 
-        double desvioPadrao = Math.sqrt(somaQuadrados / (array.length - 2));
-        return desvioPadrao * Math.sqrt(252);
+        return Math.sqrt(somaQuadrados / (array.length - 1));
+    }
+
+    // Exercicio 6 (correto)
+    public static double calcularVolatilidadeCorreto(double[] array) {
+        double mediaRetornos = 0;
+        int i = 0;
+        while (i < array.length - 1) {
+            mediaRetornos += array[i];
+            i++;
+        }
+        mediaRetornos /= (array.length);
+
+        double somaQuadrados = 0;
+        i = 0;
+        int j = 1;
+        while (i < array.length - 1) {
+            double diferenca = array[i] - mediaRetornos;
+            somaQuadrados += Math.pow(diferenca, 2);
+            i++;
+            j++;
+        }
+
+        return Math.sqrt(somaQuadrados / (array.length - 1));
     }
 
     // Exercicio 7
