@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 //        exercicio1(-10);
-        exercicio2();
+//        exercicio2();
+//        exercicio3();
+//        exercicio4(100, 0.02, 12);
+        exercicio5();
     }
 
     // Exercicio 1
@@ -77,30 +80,83 @@ public class Main {
                 for (int j = 0; j < matriz.length; j++) {
                     try {
                         valor = scanner.nextDouble();
-                        matriz[i][j] = valor;
-
-                        if (valor > 1 || valor <= 0) {
+                        if (valor > 1) {
                             throw new InputMismatchException();
                         }
+                        if (valor <= 0) {
+                            throw new ArrayIndexOutOfBoundsException();
+                        }
+                        matriz[i][j] = valor;
                     } catch (InputMismatchException e) {
                         System.out.println("Valor nao pode ser maior que 1 e menor ou igual que 0");
                         scanner.next();
-                        i--;
+                        j--;
                     }
                 }
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Matriz nao foi preenchida corretamente");
         }
+
+        for (double[] doubles : matriz) {
+            for (int j = 0; j < matriz.length; j++) {
+                System.out.print(doubles[j] + " ");
+            }
+            System.out.println();
+        }
     }
 
     // Exercicio 4
-    public static void exercicio4() {
-
+    public static void exercicio4(double p, double r, int n) {
+        try {
+            double pmt = (p * r) - Math.pow((1+r), -n);
+            if (p <= 0) {
+                throw new ArithmeticException();
+            }
+            if (r < 0) {
+                throw new IllegalArgumentException();
+            }
+            System.out.printf("%.2f", pmt);
+        } catch (ArithmeticException e) {
+            System.out.println("Erro: Valor nao pode ser negativo ou zero");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: A taxa de juros nao pode ser negativa");
+        }
     }
 
     // Exercicio 5
     public static void exercicio5() {
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
+        double[][] matriz = new double[3][3];
+        double valor;
+
+        try {
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz.length; j++) {
+                    try {
+                        valor = scanner.nextDouble();
+                        if (valor <= 0 || valor > 1) {
+                            throw new InputMismatchException();
+                        }
+                        matriz[i][j] = valor;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Erro: Valor invalido");
+                        scanner.next();
+                        j--;
+                    }
+                }
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Matriz nao foi preenchida corretamente");
+        }
+
+        for (int i = 0; i < matriz.length; i++) {
+            double media = 0;
+            for (int j = 0; j < matriz.length; j++) {
+                media += matriz[j][i];
+            }
+            System.out.println(media);
+        }
     }
 }
