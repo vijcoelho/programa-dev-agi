@@ -1,8 +1,8 @@
 package com.agibank.maratonas;
 
-// Nota: 100
+// Nota: 100 - 0
 // Dev: Vitor José Coelho
-// Tester:
+// Tester: Lilian Silva Oliveira Damasceno
 
 import java.util.InputMismatchException;
 
