@@ -20,7 +20,7 @@ public class Main {
                 {25, 26, 27, 28},
                 {29, 30, 31, 32}
         };
-        
+
         multiplicacao(a, b);
     }
 
@@ -114,9 +114,9 @@ public class Main {
             count++;
         }
 
-        for (int[] ints : c) {
+        for (int l = 0; l < c.length; l++) {
             for (int k = 0; k < c.length; k++) {
-                System.out.print(ints[k] + " ");
+                System.out.print(c[l][k] + " ");
             }
             System.out.println();
         }
