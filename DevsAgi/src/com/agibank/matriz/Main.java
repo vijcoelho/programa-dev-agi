@@ -2,10 +2,23 @@ package com.agibank.matriz;
 
 public class Main {
     public static void main(String[] args) {
-        somaElementos();
-        maiorMenorElemento();
-        matrizIdentidade();
-        somaLinhas();
+//        somaElementos();
+//        maiorMenorElemento();
+//        matrizIdentidade();
+//        somaLinhas();
+
+        int[][] a = {
+                {1,2,3},
+                {4,5,6}
+        };
+
+        int[][] b = {
+                {7,8},
+                {9,10},
+                {11,12}
+        };
+
+        multiplicacao(a, b);
     }
 
     public static void somaElementos() {
@@ -67,6 +80,42 @@ public class Main {
                 somaLinha += matriz[i][j];
             }
             System.out.println(somaLinha);
+        }
+    }
+
+    public static void multiplicacao(int[][] a, int[][] b) {
+        int[][] c = new int[a.length][b[0].length];
+
+        int m = 0, n = 0;
+        int i = 0;
+        int count = 1;
+        int tamanho = (a.length * a[0].length) + (b.length * b[0].length);
+
+        while (count <= tamanho) {
+            if (count % (a[0].length + 1) == 0) {
+                n++;
+                if (n == b[0].length) {
+                    n = 0;
+                    m++;
+                }
+            }
+
+            if (i < a[0].length) {
+                c[m][n] += a[m][i] * b[i][n];
+            }
+
+            i++;
+            if (i == a[0].length) {
+                i = 0;
+            }
+            count++;
+        }
+
+        for (int l = 0; l < c.length; l++) {
+            for (int k = 0; k < c.length; k++) {
+                System.out.print(c[l][k] + " ");
+            }
+            System.out.println();
         }
     }
 }
