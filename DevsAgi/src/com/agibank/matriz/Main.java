@@ -8,14 +8,17 @@ public class Main {
 //        somaLinhas();
 
         int[][] a = {
-                {1,2,3},
-                {4,5,6}
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
         };
 
         int[][] b = {
-                {7,8},
-                {9,10},
-                {11,12}
+                {17, 18, 19, 20},
+                {21, 22, 23, 24},
+                {25, 26, 27, 28},
+                {29, 30, 31, 32}
         };
 
         multiplicacao(a, b);
@@ -88,26 +91,26 @@ public class Main {
 
         int m = 0, n = 0;
         int i = 0;
-        int count = 1;
-        int tamanho = (a.length * a[0].length) + (b.length * b[0].length);
+        int count = 0;
+        int tamanho = 0;
 
-        while (count <= tamanho) {
-            if (count % (a[0].length + 1) == 0) {
+        if (a[0].length != b[0].length) {
+            tamanho = (a.length * a[0].length) + (b.length * b[0].length);
+        } else {
+            tamanho = (a.length * b[0].length) * a.length;
+        }
+
+        while (count < tamanho) {
+            if (count % b.length == 0 && count != 0) {
                 n++;
+                i = 0;
                 if (n == b[0].length) {
-                    n = 0;
                     m++;
+                    n = 0;
                 }
             }
-
-            if (i < a[0].length) {
-                c[m][n] += a[m][i] * b[i][n];
-            }
-
+            c[m][n] += a[m][i] * b[i][n];
             i++;
-            if (i == a[0].length) {
-                i = 0;
-            }
             count++;
         }
 
