@@ -11,11 +11,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.training.safe_pet_backend.domain.enumerated.Porte;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Document(collection = "animal")
 public class Animal {
     @Id
-    private ObjectId idAnimal;
+    private String idAnimal;
     private String nome;
     @NotBlank(message = "A especie deve ser informada!")
     private String especie;
@@ -25,6 +26,14 @@ public class Animal {
     private LocalDate dataNascimento;
     @NotBlank
     private String cor;
+    private List<String> vacinas;
+    private Boolean castrado;
+    private Boolean adotado;
+    @NotBlank
+    private String localizacaoAbrigo;
+    @NotNull
+    private String cpfVoluntario;
+    private String cpfTutor;
 
     public Animal() {
     }
@@ -69,12 +78,59 @@ public class Animal {
         this.dataNascimento = dataNascimento;
     }
 
-
     public String getCor() {
         return cor;
     }
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    public List<String> getVacinas() {
+        return vacinas;
+    }
+
+    public void setVacinas(List<String> vacinas) {
+        this.vacinas = vacinas;
+    }
+
+    public Boolean getCastrado() {
+        return castrado;
+    }
+
+    public void setCastrado(Boolean castrado) {
+        this.castrado = castrado;
+    }
+
+    public Boolean getAdotado() {
+        return adotado;
+    }
+
+    public void setAdotado(Boolean adotado) {
+        this.adotado = adotado;
+    }
+
+    public String getLocalizacaoAbrigo() {
+        return localizacaoAbrigo;
+    }
+
+    public void setLocalizacaoAbrigo(String localizacaoAbrigo) {
+        this.localizacaoAbrigo = localizacaoAbrigo;
+    }
+
+    public String getCpfVoluntario() {
+        return cpfVoluntario;
+    }
+
+    public void setCpfVoluntario(String cpfVoluntario) {
+        this.cpfVoluntario = cpfVoluntario;
+    }
+
+    public String getCpfTutor() {
+        return cpfTutor;
+    }
+
+    public void setCpfTutor(String cpfTutor) {
+        this.cpfTutor = cpfTutor;
     }
 }

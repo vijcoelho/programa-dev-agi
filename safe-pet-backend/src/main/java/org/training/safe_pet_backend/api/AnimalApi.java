@@ -1,25 +1,28 @@
 package org.training.safe_pet_backend.api;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.training.safe_pet_backend.domain.Animal;
-import org.training.safe_pet_backend.repositories.AnimalRepository;
+import org.training.safe_pet_backend.service.AnimalService;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/animal")
 public class AnimalApi {
 
-    private final AnimalRepository animalRepository;
-
-    public AnimalApi(AnimalRepository animalRepository) {
-        this.animalRepository = animalRepository;
-    }
+    @Autowired
+    private AnimalService animalService;
 
     @PostMapping
-    public Animal salvar(@RequestBody @Valid Animal animal) {
-        return animalRepository.save(animal);
+    public ResponseEntity<?> salvar(@RequestBody @Valid Animal animal) {
+        return animalService.salvar(animal);
+    }
+
+    @PutMapping("/alterar")
+    public Animal alterar(@RequestBody Map<String, String> request) {
+        return animalService.alterar(request);
     }
 }
