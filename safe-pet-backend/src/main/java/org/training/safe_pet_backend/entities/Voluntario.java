@@ -1,4 +1,4 @@
-package org.training.safe_pet_backend.domain;
+package org.training.safe_pet_backend.entities;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,8 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 import java.util.List;
 
-@Document(collection = "tutor")
-public class Tutor {
+@Document(collection = "voluntario")
+public class Voluntario {
     @Id
     private String id;
     @NotBlank
@@ -18,14 +18,13 @@ public class Tutor {
     @NotNull
     @Indexed(unique = true)
     private String cpf;
-    @NotBlank
+    @NotNull
     private LocalDate dataNascimento;
     @NotBlank
     private String localizacao;
-    private Boolean respondeu;
     private List<Animal> animais;
 
-    public Tutor() {
+    public Voluntario() {
     }
 
     public String getNome() {
@@ -58,14 +57,6 @@ public class Tutor {
 
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
-    }
-
-    public Boolean getRespondeu() {
-        return respondeu;
-    }
-
-    public void setRespondeu(Boolean respondeu) {
-        this.respondeu = respondeu;
     }
 
     public List<Animal> getAnimais() {

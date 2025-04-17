@@ -1,17 +1,17 @@
-package org.training.safe_pet_backend.api;
+package org.training.safe_pet_backend.api.animal;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.training.safe_pet_backend.domain.Animal;
+import org.training.safe_pet_backend.entities.Animal;
 import org.training.safe_pet_backend.service.AnimalService;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/animal")
-public class AnimalApi {
+public class AnimalController {
 
     @Autowired
     private AnimalService animalService;

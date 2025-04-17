@@ -1,7 +1,7 @@
 package org.training.safe_pet_backend.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.training.safe_pet_backend.domain.Animal;
+import org.training.safe_pet_backend.entities.Animal;
 
 import java.util.List;
 

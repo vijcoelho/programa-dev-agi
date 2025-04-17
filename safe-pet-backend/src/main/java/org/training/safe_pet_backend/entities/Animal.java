@@ -1,14 +1,10 @@
-package org.training.safe_pet_backend.domain;
+package org.training.safe_pet_backend.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.mongodb.lang.NonNull;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.training.safe_pet_backend.domain.enumerated.Porte;
+import org.training.safe_pet_backend.entities.enumerated.Porte;
 
 import java.time.LocalDate;
 import java.util.List;

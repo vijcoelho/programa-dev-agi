@@ -2,8 +2,8 @@ package org.training.safe_pet_backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.training.safe_pet_backend.domain.Abrigo;
-import org.training.safe_pet_backend.domain.Animal;
+import org.training.safe_pet_backend.entities.Abrigo;
+import org.training.safe_pet_backend.entities.Animal;
 import org.training.safe_pet_backend.repositories.AbrigoRepository;
 import org.training.safe_pet_backend.repositories.AnimalRepository;
 

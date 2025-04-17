@@ -1,4 +1,4 @@
-package org.training.safe_pet_backend.domain;
+package org.training.safe_pet_backend.entities;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
